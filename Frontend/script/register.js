@@ -3,12 +3,6 @@ const saveUsersInLocalStorage = (users)=>{
       localStorage.setItem('users',JSON.stringify(users));
 }
 
-// const reset =  ()=>{
-//     [userNameInput, passwordInput, eamilInput, dateInput, genderInput ]
-//       .forEach(e=>{
-//           e.val('');
-//       })
-// }
 const getAndValidateUserData = ()=>{
    let isValid = true;  
     return[([userNameInput, passwordInput, eamilInput, dateInput, genderInput ]
