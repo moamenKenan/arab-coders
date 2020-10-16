@@ -1,7 +1,5 @@
 
-const saveUsersInLocalStorage = (users)=>{
-      localStorage.setItem('users',JSON.stringify(users));
-}
+
 
 const getAndValidateUserData = ()=>{
    let isValid = true;  
@@ -29,6 +27,7 @@ const addUser = (userData)=>{
    users.push(user); 
    log(users);
    saveUsersInLocalStorage(users);
+   return user;
 }
 
 const register  = (e)=>{
@@ -36,7 +35,8 @@ const register  = (e)=>{
     const [data,isValid] = getAndValidateUserData();
 
     if(isValid){
-       addUser(data);
+       const addedUser = addUser(data);
+       setUserAuthenticationData(addedUser.id, addedUser.pass);
        window.location.href = '../index.html';
     }
 }

@@ -1,44 +1,111 @@
 
-const getDataFromLocalStorage = () => {
-    let posts = [];
-    // get posts if stored in localstorage
-    if (localStorage.getItem('posts') !== null){
-        posts = JSON.parse(localStorage.getItem('posts'));
-    }
-    return posts;
+// post-logic =====================================================
+
+const toggleComment = (id) => {
+    const item = $(`#${id}`);
+    item.find('.post-output-comment').toggleClass('hide')
 }
 
-// initial state
-const updatePosts = (posts) => {
-    for (let i = 0; i < posts.length; i++) {
-        createNewPost(posts[i].id, posts[i].body);
+const addCommentToPostUI = (postId, content) => {
+    const commentContainer = $(`#${postId} > .post-output-comment`)
+    const newComment = commentOutput.clone();
+    newComment.removeClass('hide');
+    newComment.find('p').text(content);
+    commentContainer.append(newComment);
+}
+
+
+const addComment = (postId) => {
+    const content = $(`#${postId}`)
+        .find('.comment-input > input');
+    addCommentToPost(
+        getUserAuthenticationData().userId, 
+        postId,
+        content.val() );
+    addCommentToPostUI(postId, content.val());
+    content.val('')
+}
+
+
+const toggleLikeToPostUI = (postId, cheked) => {
+    let icon ;
+    if(cheked){
+        icon = 'favorite';
+    }else{
+        icon = 'favorite_border'
     }
+    $(`#${postId}`).find('.action-favorite > span').text(icon);
+}
+
+const toggleLike = (postId) => {
+    const checked = toggleLikeToPost(
+        postId,
+        getUserAuthenticationData().userId)
+    toggleLikeToPostUI(postId, checked);
+}
+
+const toggleActionsMenuUI = (postId) => {
+    $(`#${postId}`).find('.actions-menu').toggleClass('hide');
+}
+
+const createNewPost = (id, content) => {
+    const newPost = outputPost.clone();
+    newPost.removeClass('hide');
+    newPost.attr('id', id);
+    newPost.find('.post-content > p').text(content);
+
+    // attach eventhandlers 
+    newPost.find('.action-comment > span').click(() => {
+        toggleComment(id);
+    });
+
+    newPost.find('.comment-input > span').click(() => {
+        addComment(id);
+    })
+
+    newPost.find('.action-favorite > span').click(() => {
+        toggleLike(id)
+    })
+
+    newPost.find('.post-actions > span').click(() => {
+        toggleActionsMenuUI(id)
+    })
+
+    // add to the dom
+    main.prepend(newPost)
 }
 
 
 const addPost = () => {
-    let lastId
-    if(posts.length === 0 ){
-        lastId = 0 ;         
-    }else{
-        lastId = ++(posts[posts.length - 1].id)
-    }
+    const userId = getUserAuthenticationData().userId ;
     const userInput = textArea.val();
+    const lastId = addPostToPosts(userId, userInput);
     createNewPost(lastId, userInput)
-    posts.push({
-        id: lastId,
-        body: userInput
-    });
-    console.log(posts)
+    addPostIdToUser(userId, lastId);
     textArea.val('')
-    localStorage.setItem('posts', JSON.stringify(posts))
 }
 
 
 
-// excute functions 
-const posts = getDataFromLocalStorage();
-updatePosts(posts);
+// initial state
+const updatePosts = () => {
+    const posts = getPostsFromLocalStorage()
+    for (let i = 0; i < posts.length; i++) {
+        createNewPost(posts[i].id, posts[i].body);
+        if(posts[i].comments){
+            for(let j = 0 ; j < posts[i].comments.length; j++){
+                addCommentToPostUI(
+                    posts[i].id,
+                    posts[i].comments[j].content
+                    )
+            }
+        }
+    }
+}
+
+
+// entry point ===============================================
+updatePosts();
 
 
 // attach eventhandler

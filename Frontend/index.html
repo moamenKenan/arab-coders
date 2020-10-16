@@ -10,8 +10,8 @@
     <script src="./script/jquery-3.5.1.min.js" defer></script>
     <script src="script/helperFunctions.js" defer></script>
     <script src="script/dom.js" defer></script>
+    <script src="script/data.js" defer></script>
     <script src="./script/modal.js" defer></script>
-    <script src="script/post-ouput.js" defer></script>
     <script src="script/app.js" defer></script>
     <title>Home page</title>
 </head>
@@ -158,9 +158,14 @@
                             </p>
                         </div>
                         <div class="post-actions">
-                            <span class="material-icons">
+                            <span class="material-icons target">
                                 more_vert
                             </span>
+                            <ul class="actions-menu hide">
+                                <li><span class="save">save</span></li>
+                                <li><span class="edit">edit</span></li>
+                                <li><span class="delete">delete</span></li>
+                            </ul>
                         </div>
 
                     </div>
@@ -198,11 +203,11 @@
                             </span>
                             <input type="text" placeholder="write your comment here ...">
                         </div>
-                        <div class="comment-output">
+                        <div class="comment-output hide">
                             <span class="material-icons">
                                 account_circle
                             </span>
-                            <p> comment example : hallo kenan</p>
+                            <p> </p>
                         </div>
                     </div>
                 </div>
