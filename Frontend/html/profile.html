@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style/profile.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="../script/jquery-3.5.1.min.js" defer></script>
+    <script src="../script/dom.js" defer></script> 
+    <script src="../script/helperFunctions.js" defer></script>
+    <script src="../script/data.js" defer></script>
+    <script src="../script/components.js" defer></script>
+    <script src="../script/profile.js" defer></script>
+    <title>Profile</title>
+</head>
+<body>
+    <div class="contianer">
+        <div class="profile">
+            <div class="photo-name">
+              <div class="imge-profile"></div>
+             <h2>kenan hassan Alrawashdeh</h2>
+              <h4>(porgramer)</h4>
+            </div>
+            <div class="personalInf">
+               <div class="info"> 
+                <span class="material-icons block">school </span>
+                   <p>Studies Computer Science at ‎Applied Science University</p>
+                </div>
+                <div class="info">
+                    <span class="material-icons block"> work </span>
+                    <p>My Work Is wep Devloper</p>
+                </div>
+               <div class="info">
+                <span class="material-icons block"> house</span>
+                   <p>Lives in Amman, Jordan</p>
+                </div>
+                <div class="info">
+                    <span class="material-icons block">location_on </span>
+                   <p>From Damascus, Syria</p>
+                </div>
+                <div class="info">
+                    <span class="material-icons block">date_range </span>
+                    <p>Date of Bearth 26/11/1997</p>
+                </div>
+                <div class="info">
+                    <span class="material-icons block">rss_feed </span>
+                   <p>Followed by 296 people</p>
+                </div>
+                <div class="div-btn-details"><p>Edit Details</p></div>
+            </div>
+            <div class="div-edit hide">
+                <form action="">
+                   <div class="div-edit-input">
+                       <input  class="shaepInput" type="text" name="editName" placeholder="Edit Name" maxlength="50">
+                    </div>
+                   <div class="div-edit-input">
+                       <input  class="shaepInput" type="text" name="nicknamed" placeholder="Nicknamed" maxlength="20">
+                   </div>
+                   <div class="div-edit-input">
+                       <input type="text"  class="shaepInput" name="major" placeholder="Major" maxlength="50">
+                   </div>
+                   <div class="div-edit-input">
+                       <input type="text"  class="shaepInput" name="university" placeholder="University" maxlength="75">
+                   </div>
+                   <div class="div-edit-input">
+                       <input type="text"  class="shaepInput" name="work" placeholder="Work">
+                    </div>
+                    <div class="div-edit-input">
+                        <input type="date"  class="shaepInput" name="editDate" max="2020-05-09">
+                    </div>
+                    <div class="div-edit-input" >
+                        <select name="livesCountry"  class="shaepInput">
+                            <option value="" selected disabled>Lives Country</option>
+                             <option value="Amman, Jordan">Amman, Jordan</option>
+                             <option value="Damascus, Syria">Damascus, Syria</option>
+                        </select>
+                    </div>
+                    <div class="div-edit-input">
+                        <select name="fromCountry"  class="shaepInput">
+                            <option value="" selected disabled>From Country</option>
+                             <option value="Amman, Jordan">Amman, Jordan</option>
+                             <option value="Damascus, Syria">Damascus, Syria</option>
+                        </select>
+                    </div>
+                    <div class="div-btn-edit">
+                       <div class="div-btn"><button type="submit">Save</button></div>
+                        <div class="div-btn"><button type="submit">Caencl</button></div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="posts">
+            <div class="div-post"></div>
+            <div class="hedaer"> 
+                <div class="view-profile">
+                    <span class="material-icons"> reorder</span>
+                </div>
+                <div class="nav hide">
+                    <ul>
+                        <li><a href="#">My Posts</a></li>
+                        <li><a href="#">Liked Posts</a></li>
+                        <li><a href="#">Saved Posts</a></li>
+                        <li><a href="#">Friends</a></li>
+                        <li><a href="#">Follwores</a></li>
+                    </ul>
+                </div>
+            </div>
+               
+            
+                <div class="post-output hide">
+                    <div class="post-output-header">
+                        <div class="profile-img">
+                            <img src="../images/account_circle-24px.svg">
+                        </div>
+
+                        <div class="post-content">
+                            <p>
+
+                            </p>
+                        </div>
+                        <div class="post-actions">
+                            <span class="material-icons target">
+                                more_vert
+                            </span>
+                            <ul class="actions-menu hide">
+                                <li><span class="save">save</span></li>
+                                <li><span class="edit">edit</span></li>
+                                <li><span class="delete">delete</span></li>
+                            </ul>
+                        </div>
+
+                    </div>
+
+                    <div class="line">
+                        <hr>
+                    </div>
+
+                    <div class="post-output-bottom">
+                        <div class="actions">
+                            <div class="action action-favorite">
+                                <span class="material-icons">
+                                    favorite_border
+                                </span>
+                            </div>
+
+                            <div class="action action-comment">
+                                <span class="material-icons">
+                                    comment
+                                </span>
+                            </div>
+
+                            <div class="action action-share">
+                                <span class="material-icons">
+                                    share
+                                </span>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="post-output-comment hide">
+                        <div class="comment-output hide">
+                            <span class="material-icons">
+                                account_circle
+                            </span>
+                            <p> </p>
+                        </div>
+                        <div class="comment-input">
+                            <span class="material-icons">
+                                send
+                            </span>
+                            <input type="text" placeholder="write your comment here ...">
+                        </div>
+                    </div>
+                </div> 
+        </div>
+    </div> 
+</body>
+</html>

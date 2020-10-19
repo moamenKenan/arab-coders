@@ -18,3 +18,9 @@ const emailInput_login =$('input[name="email"]');
 const password_login =$('input[name="pass"]');
 const loginBtn = $('.btn-submit');
 const errorMessageLogin = $('.error-massge');
+
+ /*Profile Ietms */
+ 
+ const veiwProfileIcon = $('.view-profile');
+ const navProfile = $('.nav');
+ const postsProfile = $('.posts');

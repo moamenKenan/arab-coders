@@ -109,3 +109,12 @@ const addPostToPosts = (userId, userInput) => {
     savePostsInLocalStorage(posts);
     return lastId;
 }
+
+const getUserPostsFromLocalStorage = () => {
+    let posts = [];
+    // get posts if stored in localstorage
+    if (localStorage.getItem('posts') !== null){
+        posts = JSON.parse(localStorage.getItem('posts'));
+    }
+    return posts.filter((e)=>e.userId === getUserAuthenticationData().userId);
+}

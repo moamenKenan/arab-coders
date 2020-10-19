@@ -1,0 +1,332 @@
+:root {
+    /* colors */
+    --main-green: #69971E;
+    --main-green-hell: #69971E66;
+    --text-hell: #ffffff;
+    --text-dark: #050505;
+    --gray: #333333;
+    --gray-hell: rgba(0, 0, 0, 0.4);
+    --white-gray: rgba(0, 0, 0, 0.4);
+    --white: #ffffff;
+    
+    /* text */
+    --font-family: 'Monda', sans-serif;
+}
+ 
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: var(--font-family);
+}
+
+.contianer{
+    position: relative;
+}
+
+.profile{
+   border-right: 1px solid var(--main-green);
+   position: fixed;
+   background: var(--white);
+   padding : 0.5rem ;
+   height: 100vh;
+   width: 30vw;
+}
+
+.photo-name{
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+}
+
+.imge-profile{
+    background-image: url('https://3tab.net/wp-content/uploads/2019/06/12546-4.jpg');
+    width: 12rem; 
+    height: 12rem;
+    border-radius: 50%;
+    margin-bottom: 1rem;
+    background-size: cover;
+}
+
+.personalInf{
+    margin-left: 0.3rem;
+    margin-top: 2rem;
+}
+.personalInf p{
+    font-weight: bold;
+    font-family: var(--font-family);
+    width: 60%;
+    padding-left: 0.5rem;
+    padding-top: 0.4rem;
+}
+
+.info{
+    display: flex;
+    margin: 1rem 0;
+}
+.block{
+    align-self: center;
+}
+.div-btn-details{
+    display: flex;
+    justify-content: center;
+    margin: 2rem 0 1rem 0;
+}
+.div-btn-details p{
+    background: var(--main-green);
+    text-align: center;
+    width: 60%;
+    padding: 0.5rem 0;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 5px;
+    color: var(--white);
+}
+.div-btn-details p:hover{
+    cursor: pointer;
+    background: rgb(15, 75, 15);
+    color: var(--white);
+}
+.div-edit{
+    background: var(--white);
+    box-shadow: 7px 7px 15px var(--main-green-hell),-7px -7px 15px var(--main-green-hell);
+    width: 25rem;
+    height: 30rem;
+    position: absolute;
+    top: 15vh;
+    left: 35vw;
+    
+    border-radius: 7px;
+}
+.div-edit-input{
+    margin: 1rem 2rem;
+    height: 2rem;
+}
+.shaepInput{
+    height: 100%;
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid var(--text-dark);
+    background: none;
+    outline: none;
+    font-size: 1rem;
+    color:  var(--text-dark);
+}
+.edit-input input::placeholder{
+    color: rgb(150, 144, 144);
+}
+
+.div-btn-edit{
+    display: flex;
+    justify-content: flex-end;
+    margin: 3rem 1rem;
+    height: 2rem;
+}
+
+.div-btn{
+    margin-right: 2rem;
+    width: 25%;
+    height: 100%;
+}
+.div-btn button{
+    font-size: 1rem;
+    width: 100%;
+    height: 100%;
+    background: rgb(189, 183, 183);
+    color: var(--text-dark);
+    font-weight: bold;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+}
+.div-btn button:hover{
+    cursor: pointer;
+    background: var(--main-green);
+    color: var(--white);
+}
+                 /*//////////////////////   posts  ////////////////////*/
+
+.posts{
+    top:10vh;
+    position: absolute;
+    left: 30vw;
+    height: 90vh;
+    width: 70vw;
+    padding: 0 5rem;
+}  
+
+
+.hedaer{
+    display: flex;
+    flex-direction: column;
+    align-self: flex-end;
+    position: relative;
+}   
+
+.view-profile{
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  position: fixed;
+  right: 1.3rem;
+  top: 1.4rem; 
+}
+.view-profile span{
+    display: block;
+    transform: scale(3,3);
+    color: var(--main-green);
+    cursor: pointer;
+}               
+.nav{
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    position: fixed;
+    right: 0.7rem;
+    top: 5rem; 
+}
+  
+.nav ul{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    font-size: 1rem; 
+}              
+.nav ul li{
+    list-style: none;
+     margin-bottom: 1rem;
+}   
+
+.nav ul li a{
+    display: block;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    background: var(--main-green); 
+    color: var(--white);
+}
+.nav ul li a:hover {
+    animation: shake 0.5s;
+    animation-iteration-count: infinite;
+  }
+
+@keyframes shake {
+    0% { transform: translate(1px, 1px) rotate(0deg); }
+    40% { transform: translate(1px, -1px) rotate(1deg); }
+    50% { transform: translate(-1px, 2px) rotate(-1deg); }
+    60% { transform: translate(-3px, 1px) rotate(0deg); }
+    90% { transform: translate(1px, 2px) rotate(0deg); }
+    100% { transform: translate(1px, -2px) rotate(-1deg); }
+  }
+
+ .post-output {
+    margin: 10px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 0 10px var(--gray-hell);
+}
+
+
+.post-output-header {
+    display: flex;
+}
+.profile-img img{
+    width: 6rem;
+}
+
+.post-actions .target {
+    color: var(--main-green);
+    cursor: pointer;
+    border-radius: 25px;
+}
+
+.post-actions .target:hover {
+    background-color: var(--main-green-hell);
+}
+
+.actions-menu{
+    background: var(--white);
+    position : absolute;
+    right: 10px;
+    box-shadow: 0 0 10px var(--gray-hell);
+}
+
+.actions-menu li{
+    list-style: none;
+}   
+
+.actions-menu span {
+    width: 100%;
+    padding : 10px 30px;
+    display: block;
+    color : var(--main-green);
+    font-weight: bold;
+}
+
+.actions-menu span:hover{
+    background: var(--main-green);
+    color:var(--white);
+}
+
+
+.post-content {
+    width: 100%;
+}
+
+.post-output-bottom>.actions {
+    display: flex;
+    justify-content: space-around;
+}
+
+.post-output-bottom span {
+    cursor: pointer;
+    color: var(--main-green);
+    font-size: 2rem;
+}
+
+
+
+
+.comment-input {
+    position: relative;
+    padding: 10px;
+}
+
+.comment-input input {
+    width: 100%;
+    border-radius: 25px;
+    border: solid 1px var(--main-green-hell);
+    padding: 5px 40px 5px 20px;
+}
+
+
+.comment-input span {
+    position: absolute;
+    right: 20px;
+    top: 18px;
+    color: var(--main-green);
+    font-size: 1.3rem;
+    cursor: pointer;
+}
+
+.comment-output {
+    display: flex;
+    padding: 10px;
+    align-items: center;
+}
+
+.comment-output span {
+    font-size: 2rem;
+    padding: 10px;
+    color: var(--main-green);
+}
+
+.comment-output p {
+    font-size: 0.9rem;
+    padding: 10px;
+}
+.hide{
+    display: none;
+} 
+
